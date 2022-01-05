@@ -47,5 +47,5 @@ int main() {
               }
        } while (n != 3);
 
-    return 0;
+    system("pause");
 }
