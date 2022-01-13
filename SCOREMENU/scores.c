@@ -30,7 +30,7 @@ void display_menu(void) {
         printf("[C]Display ALL results from all games WON \n");
         printf("[D]Display ALL results ordered by oponent score from low to high. \n");
         printf("[E]Quit the program \n");
-        printf("Enter an option:");
+        printf("Enter an option: ");
         scanf("%c",&choice);
         
         // set menu options
@@ -57,14 +57,17 @@ void display_menu(void) {
 
 //Begin function items
 void game_result(void) {
-    int score = 100, teams = 2, game [score] [teams], s = 0, t = 0;
+    int teams = 2, score = 100, game [teams] [score], s = 0, i;
     
-    for (s = 0; s < score; s++)
-        for (t = 0; t < teams; t++) {
-        game [s] [t] = 0;
-        printf("Enter score:\n");
-        scanf("%d", &game [s] [t]);
-    }
+    for (i = 0; i < score; i++) {
+    printf("Enter your score: ");
+    scanf("%d", &s);
+    game [0] [i] = s;
+    
+    printf("Enter opponents score: ");
+    scanf("%d", &s);
+    game [1] [i] = s;
     
     return;
+  }
 }
