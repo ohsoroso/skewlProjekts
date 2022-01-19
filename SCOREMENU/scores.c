@@ -9,6 +9,7 @@ void games_won(void);
 void scores_sort(void);
 
 int main() {
+    int teams = 2, score = 100, game [teams] [score], i, j;
     
     //Call menu
     display_menu();
@@ -18,6 +19,7 @@ int main() {
 
 //Display menu options
 void display_menu(void) {
+    int teams = 2, score = 100, game [teams] [score], i, j;
     char choice;
     
     do
@@ -57,17 +59,13 @@ void display_menu(void) {
 
 //Begin function items
 void game_result(void) {
-    int teams = 2, score = 100, game [teams] [score], s = 0, i;
+int teams = 2, score = 100, game [teams] [score], i, j;
     
-    for (i = 0; i < score; i++) {
-    printf("Enter your score: ");
-    scanf("%d", &s);
-    game [0] [i] = s;
-    
-    printf("Enter opponents score: ");
-    scanf("%d", &s);
-    game [1] [i] = s;
-    
+    printf("Enter your stuf: \n");
+    for (i = 0; i < teams; i++)
+      for (j = 0; j < score; j++) {
+        scanf("%d", &game [i] [j]);
+        break;
+      }
     return;
-  }
 }
