@@ -26,15 +26,21 @@ char choice;
         //Set menu options
         switch(choice)
         {
+            case 'a':
             case 'A': game_result(game);
               break;
+            case 'b':  
             case 'B': list_scores(game);
               break;
+            case 'c':  
             case 'C': games_won(game);
               break;
+            case 'd':
             case 'D': scores_sort(game);
               break;
+            case 'e':  
             case 'E': printf("Quitting program!\n");
+            default: printf("That is not a valid option!\n");
         }
         
     } while (choice != 'E');

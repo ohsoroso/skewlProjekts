@@ -39,7 +39,8 @@ printf("[Q]uit the program\n");
 scanf("%s", &choice);
 //Menu calls
 switch (choice) {
-case 'G'://Set and store individual deposits
+case 'g'://Set and store individual deposits
+case 'G':
   printf("Enter deposit amount:");
   scanf("%d", &deposit);
   printf("Your deposit was: %d\n", deposit);
@@ -50,20 +51,23 @@ case 'G'://Set and store individual deposits
   i++;
   break;
 
+case 's':
 case 'S'://Sum deposits
   for (i = 0; i < 5; i++) {
       sum += deposits[i];
   }
   printf("\nThe sum of all deposits is: %d\n", sum);
   break;
-  
+
+case 'd':  
 case 'D'://Deposits highest to lowest using BubbleSort
 n = sizeof(deposits)/sizeof(deposits[0]);
 bubbleSort(deposits, n);
 printf("Deposits highest to lowest: \n");
 printArray(deposits, n);
   break;
-  
+
+case 'a':  
 case 'A'://Average deposits
   for (i = 0; i < 5; i++) {
       totalSum += deposits[i];
@@ -71,7 +75,8 @@ case 'A'://Average deposits
   avrg = totalSum / 5;
   printf("\nAverage is: %d\n", avrg);
   break;
-  
+ 
+ case 'l': 
  case 'L'://Finding lowest deposit
  n = sizeof(deposits)/sizeof(deposits[0]);
  low = deposits[0];
@@ -83,7 +88,13 @@ case 'A'://Average deposits
    printf("The lowest deposit was: %d\n", low);
    break;
 
+case 'q':
+case 'Q':
+   printf("Thanks for using rosocorp.\nHave a nice day!");
+   exit(0);
+
 default:
+   printf("Not a valid option, please follow prompt!\n");
   break;
 }
 } while (choice != 'Q');
