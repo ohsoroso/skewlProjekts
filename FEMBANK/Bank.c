@@ -5,7 +5,7 @@ int main() {
   float fTransAmount = 0.0;
   float fBalance = 721.0;
 
-  printf("\nWelcome to Femboi Bank of America ^_^\n");
+  printf("\nWelcome to Bank of Roso ^_^\n");
   printf("\n1. Would you like to deposit?\n");
   printf("\n2. or withdraw?\n\v");
   scanf("%d", &iSelection);
