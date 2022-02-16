@@ -25,7 +25,7 @@ void stringRange(char str [100]) {
     //Find length and turn it into a number
     int length = strlen(str);
     //Print number
-    printf("%d", length);
+    printf("%d\n", length);
 }
 
 void stringamid(char str [100]) {
@@ -63,7 +63,8 @@ void stringamid(char str [100]);
 
 int main() {
 char isslit [100];
-
+int answer;
+  do {
   printf("Enter text here: ");
   scanf("%s", isslit);
   
@@ -72,4 +73,10 @@ char isslit [100];
   verticalString(isslit);
   reverseString(isslit);
   stringRange(isslit);
+  
+  printf("Would you like to enter another word?\n");
+  printf("1. Yes\n2. No\n");
+  scanf("%d", &answer);
+  } while (answer != 2);
+  
 }
