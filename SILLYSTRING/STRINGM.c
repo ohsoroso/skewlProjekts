@@ -6,16 +6,14 @@ void printString(char str [100]) {
     puts(str);
 }
 
-void reverseString(char str [100])  
-{  
-    // declare variable  
+void reverseString(char str [100]) {  
     int i, len, temp;  
-    len = strlen(str); // use strlen() to get the length of str string  
+    len = strlen(str); //Get the length of the string  
       
-    // use for loop to iterate the string   
+    // use for loop to iterate through the string   
     for (i = 0; i < len/2; i++)  
     {  
-        // temp variable use to temporary hold the string  
+        // temp variable use to temporary hold the string and swap
         temp = str[i];  
         str[i] = str[len - i - 1];  
         str[len - i - 1] = temp;  
@@ -24,30 +22,38 @@ void reverseString(char str [100])
 }  
 
 void stringRange(char str [100]) {
+    //Find length and turn it into a number
     int length = strlen(str);
+    //Print number
     printf("%d", length);
 }
 
 void stringamid(char str [100]) {
-    int n, a = 0;
-    for(int i=0;i<=n;i++)
-   {
-     // for space 
-     for(int j=0;j<=n-i;j++) 
-     printf(" "); // print space
+    int i, j, length;
+    //Get length for rows
+    length = strlen(str);
+    //Loop thorugh and print letters equal to rows
+    for ( i = 0 ; i < length ; i++ ) {
+      for(j = length; j > i; j--) {
+        //Print spaces where letter would be
+        printf(" ");
+    }
+      //Print letters where they need to be for pyramid
+      for( j = 0 ; j <= i ; j++ ) {
+        printf("%c", str[j]);
+        printf(" ");
+    }
+        printf("\n");
+  }
+}
 
-     for(int k=0;k<=i;k++)
-     {
-        // print character
-        printf("%2c", str[a++]);
-
-        // if index reach end of string then again
-        // it should start from initial characters
-        if(str[a]=='\0') a=0;
-     }
-
-     printf("\n"); // new line
-   }
+void verticalString(char str [100]) {
+    int j = 0, i;
+    //Loop through one letter at a time
+    for(i = 0; i < str[j]; i++) {
+        //Print each letter on one line
+        printf("%c\n", str[j++]);
+    }
 }
 
 void verticalString(char str [100]);
@@ -61,8 +67,9 @@ char isslit [100];
   printf("Enter text here: ");
   scanf("%s", isslit);
   
+  stringamid(isslit);
   printString(isslit);
+  verticalString(isslit);
   reverseString(isslit);
   stringRange(isslit);
-  stringamid(isslit);
 }
