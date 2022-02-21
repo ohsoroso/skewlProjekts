@@ -61,7 +61,7 @@ float fillAnualIncome(PERSON *h1, PERSON *h2, PERSON *h3) {
         scanf("%f", &result);
         if (result < 0 || result > 1000000)
             printf("Invalid Number--- Try Again\n");
-    } while (result > 0 || result < 1000000);
+    } while (result < 0 || result > 1000000);
 
     return result;
 }
