@@ -20,7 +20,7 @@ int main() {
   }
   else if (yaynay == 'N' || yaynay == 'n') {
     printf("Exiting program...");
-    EXIT_SUCCESS;
+    return 0;
   }
   else {
       printf("Invalid entry, please try again.");
@@ -56,7 +56,7 @@ int main() {
                 printf("Add some words: ");
                 getchar();
                 if(fgets(entry, sizeof(entry) + 1, stdin) != NULL)
-                fprintf(pWrite, "%s", entry);
+                  fprintf(pWrite, "%s", entry);
                 fclose(pAppend);
                 break;
                 
@@ -65,17 +65,25 @@ int main() {
                 pWrite = fopen("memi.txt", "w+");
                 fclose(pWrite);
                 printf("Words dumped.");
+                break;
                 
       case 'd':
       case 'D': pRead = fopen("memi.txt", "r");
                 printf("Loading words for reading...\n");
                 i = fgetc(pRead);
                 while (i != EOF) {
-                printf ("%c", i);
-                i = fgetc(pRead);
+                  printf ("%c", i);
+                  i = fgetc(pRead);
+                }
+
+                if (fgetc(pRead = NULL)) {
+                  printf("Nothing found please enter text.");
                 }
   
                 fclose(pRead);
+                break;
+
+      default: printf("Invalid entry please try again.");
                 
   }
  } while (choice != 'E');

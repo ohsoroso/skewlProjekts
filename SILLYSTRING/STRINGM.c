@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
 
 void printString(char str [100]) {
     puts(str);
@@ -29,7 +31,7 @@ void stringRange(char str [100]) {
 }
 
 void stringamid(char str [100]) {
-    int i, j, length;
+    int i, j, length; 
     //Get length for rows
     length = strlen(str);
     //Loop thorugh and print letters equal to rows
@@ -63,10 +65,18 @@ void stringamid(char str [100]);
 
 int main() {
 char isslit [100];
-int answer;
+int answer, i;
   do {
   printf("Enter text here: ");
   scanf("%s", isslit);
+
+  for (i = 0; i < sizeof(isslit); i++) {
+    if(isslit[i] >= '0' && isslit[i] <= '9') {
+      printf("Invalid entry please try again.\n");
+      printf("Enter text here: ");
+      scanf("%s", isslit);
+    }
+  }
   
   stringamid(isslit);
   printString(isslit);
@@ -78,5 +88,4 @@ int answer;
   printf("1. Yes\n2. No\n");
   scanf("%d", &answer);
   } while (answer != 2);
-  
 }
