@@ -11,7 +11,7 @@ int main() {
   printf("Now\nPick\nThat\nNUMBAH!\n");
   scanf("%d", &iMyNumbah);
 
-  if isdigit(iMyNumbah == iRandomNumbah) {
+  if (isdigit(iMyNumbah == iRandomNumbah)) {
       printf("\nLADIES AND GENTLEMEN WE HABE A WINNER!!!\n");
   }
     else {
