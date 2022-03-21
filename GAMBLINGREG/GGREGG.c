@@ -34,7 +34,7 @@ int main() {
   case 'r':
   case 'R':
     printf("You have won %d times!\n", win);
-    printf("You have lost %d times...", loss);
+    printf("You have lost %d times...\n", loss);
     break;
   case 'l':
   case 'L':

@@ -26,8 +26,7 @@ void numToRom(int num) { //Parallel arrays to compare numbers with symbols
   int size = 12;
   int nums[] = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
     char *sym[] = {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"}; 
-    while(num>0) //Make sure number is valid
-    {
+    while(num>0) { //Make sure number is valid
       int split = num/nums[size]; //Divide number by largest number
       num = num%nums[size];
       while(split--)
