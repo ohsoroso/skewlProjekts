@@ -68,4 +68,6 @@ int main() {
   fwrite(heapHoom, entries * sizeof(heapHoom), 1, writer);//Writing to bin file
 
   free(heapHoom);//Free that memory!!!
+  
+  return 0;
 }

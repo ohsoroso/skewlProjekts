@@ -1,3 +1,8 @@
+//Zakary Smith 03/18/2021
+//Program demosntrating mutable structs passed through functions
+//Allows you to enter and calculate a salespersons income and sales as well as view their total income and sales
+//Scales progressively with the amount of sales no matter how many times you switch between people
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "SALES.h"
@@ -25,8 +30,8 @@ int main() {
     break;
   case 4:
     return 0;
-  default:
-    printf("Invalid option please try again.");
+  default: //Used as user error protection since there is not a lot of ways they can do bad things here
+    printf("Invalid option please try again.\n");
     break;
   }
 } while (choice != 4);
@@ -37,7 +42,7 @@ void salesTime(seller *salesPerson) {
   do {
   printf("What woud you like to do:\n");
   printf("1. Record new sale\n");
-  printf("2. Show current income\n");
+  printf("2. Show total income and sales\n");
   printf("3. Quit\n");
   printf("Enter option here: ");
   scanf(" %d", &choice);
@@ -48,7 +53,7 @@ void salesTime(seller *salesPerson) {
     scanf(" %d", &sale);
     salesPerson->sales += sale;
 
-    for (int i = 0; i < sale; i++) {
+    for (int i = 0; i < sale; i++) { //Determining 
       if (i <= 5 && i > 0 || salesPerson->sales <= 5 && salesPerson->sales > 0) {
         cash += 5;
       }
@@ -65,13 +70,14 @@ void salesTime(seller *salesPerson) {
     salesPerson->income = cash;
     printf("%d\n", salesPerson->income);
     break;
-  case 2:
+  case 2: //Show income and total sales
     printf("%d\n", salesPerson->sales);
     printf("%d\n", salesPerson->income);
     break;
   case 3:
     return;
-  default:
+  default: //User error case pt. 2
+    printf("Invalid option please try again.\n");
     break;
   }
   } while (choice != 3);
